@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,400i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Arapey:400,400i&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: lightgrey;
+}
+
+.card {
+    border-radius: 0.5em;
+    box-shadow: 5px 5px 5px lightsalmon;
+    background-color: white;
+    margin: 5px;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto 20% 20% auto;
+    grid-template-areas:
+        "title title title"
+        "photo photo emojis"
+        "photo photo emojis"
+        "..... quote quote";
+    gap: 2px 2px;
+}
+
+.title {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    grid-area: title;
+}
+
+.photo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    grid-area: photo;
+}
+
+.photo-container img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.emojis {
+    grid-area: emojis;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.emojis .emoji {
+    font-size: 2em;
+}
+
+.card blockquote {
+    grid-area: quote;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: left;
+    align-self: center;
+    font-family: 'Nunito', sans-serif;
+    font-style: italic;
+    font-size: 1rem;
+    position: relative;
+}
+
+header {
+    grid-area: header;
+    background: navy;
+}
+
+footer {
+    grid-area: footer;
+    background: lightskyblue;
+}
+
+/* blockquote span::before {
+    display: block;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #7a7a7a;
+}
+blockquote span::after {
+    display: block;
+    content: "\201D";
+    font-size: 80px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #7a7a7a;
+} */
+
+@media all and (min-width: 401px) {
+    .layout {
+        display: grid;
+        grid-template-rows: 70px auto 70px;
+        grid-template-areas: 
+            "header"
+            "cards"
+            "footer";
+        gap: 1rem;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 0.3rem, 0.3rem;
+        grid-area: cards;
+    }
+
+    .card {
+        transition: transform .3s ease;
+        width: minmax()
+    }
+    .card:hover{
+        transform: translateY(-1em);
+    }
+
+}
+
+@media all and (max-width: 400px) {
+
+    .card {
+        justify-content: center;
+        grid-template-columns: 0.9fr;
+        grid-template-areas:
+            "title"
+            "emojis"
+            "photo"
+            "quote";
+    }
+
+    .emojis {
+        flex-direction: row;
+    }
+
+    .card blockquote {
+        padding-left: 0.5rem;
+        text-align: center;
+    }
+
+
+}
