@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,400i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Monserrat:400,400i,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Arapey:400,400i&display=swap');
 
 * {
@@ -8,6 +8,7 @@
 }
 
 body {
+    font-family: 'Monserrat', sans-serif;
     height: 100%;
     width: 100%;
     background-color: lightgrey;
@@ -32,7 +33,7 @@ body {
 
 .title {
     text-align: center;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Monserrat', sans-serif;
     font-size: 2.5rem;
     margin-top: 1rem;
     grid-area: title;
@@ -81,32 +82,57 @@ body {
 
 header {
     grid-area: header;
-    background: navy;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom-left-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "info buttons";
+    
+}
+
+.info-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;    
+    grid-area: info;
+    font-size: 2rem;
+}
+
+.info-header>.brand-name{
+align-self: center;
+margin-left: 10px;
+}
+
+.botones-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  
+    overflow: hidden;
+    grid-area: buttons;
+    margin: 10px;
+}
+
+.button-header{
+    margin-left: 20px;
+    font-weight: 700;
+
+}
+.button-header:hover{
+    transition: color .35s ease;
+    color: rgba(221, 75, 3, 1);
+    
 }
 
 footer {
     grid-area: footer;
     background: lightskyblue;
 }
-
-/* blockquote span::before {
-    display: block;
-    content: "\201C";
-    font-size: 80px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #7a7a7a;
-}
-blockquote span::after {
-    display: block;
-    content: "\201D";
-    font-size: 80px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    color: #7a7a7a;
-} */
 
 @media all and (min-width: 401px) {
     .layout {
