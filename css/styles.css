@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,400i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Arapey:400,400i&display=swap');
 
 * {
@@ -8,6 +8,7 @@
 }
 
 body {
+    font-family: 'Roboto', sans-serif;
     height: 100%;
     width: 100%;
     background-color: lightgrey;
@@ -32,7 +33,7 @@ body {
 
 .title {
     text-align: center;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 2.5rem;
     margin-top: 1rem;
     grid-area: title;
@@ -81,32 +82,66 @@ body {
 
 header {
     grid-area: header;
-    background: navy;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom-left-radius: 20px;
+    display: grid;
+    grid-template-columns: 140px auto 40%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "info name buttons"
+        "info .... .......";
+    
+}
+
+.logo-container {
+    grid-area: info;
+    display: flex;
+    justify-content: center;
+}
+.logo-container>img {
+    float: left;
+    border-radius: 100%;
+}
+.fondo {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    border-bottom-left-radius: 30px;
+}
+
+
+.brand-name{
+    grid-area: name;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.botones-header {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;    
+    grid-area: buttons;
+}
+.botones-header:last-child{
+    margin-right: 10px;
+}
+.button-header{
+    text-align: center;
+    margin-left: 10px;
+}
+.button-header:hover{
+    transition: color .2s ease-out;
+    color: rgba(221, 75, 3, 1);
+    
 }
 
 footer {
     grid-area: footer;
     background: lightskyblue;
 }
-
-/* blockquote span::before {
-    display: block;
-    content: "\201C";
-    font-size: 80px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #7a7a7a;
-}
-blockquote span::after {
-    display: block;
-    content: "\201D";
-    font-size: 80px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    color: #7a7a7a;
-} */
 
 @media all and (min-width: 401px) {
     .layout {
@@ -116,7 +151,6 @@ blockquote span::after {
             "header"
             "cards"
             "footer";
-        gap: 1rem;
     }
 
     .card-container {
