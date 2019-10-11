@@ -152,6 +152,19 @@ footer {
     margin-top: 4rem;
 }
 
+.content > div {
+    position: relative;
+}
+.content > div > span {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 3rem;
+    padding-bottom: 0.5rem;
+}
+
 .photo-align-center {
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("https://picsum.photos/1280/720")  no-repeat;
     background-size: cover;
@@ -159,6 +172,7 @@ footer {
     display: grid;
     align-content: center;
     justify-content: center;
+    grid-template-areas: "texto";
     height: 100vh;
 }
 .photo-align-right {
