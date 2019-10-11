@@ -157,11 +157,9 @@ footer {
     background-size: cover;
     background-position: center center;
     display: grid;
-    grid-template-columns: 15% 70% 15%;
-    grid-template-areas: "texto";
+    align-content: center;
     justify-content: center;
-
-    height: 700px;
+    height: 100vh;
 }
 .photo-align-right {
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("https://picsum.photos/1280/720")  no-repeat;
@@ -171,7 +169,7 @@ footer {
     grid-template-columns: 65% 35%;
     grid-template-areas: "nada texto";
 
-    height: 50%;
+    height: 100vh;
 }
 .photo-align-left {
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("https://picsum.photos/1280/720")  no-repeat;
@@ -181,7 +179,7 @@ footer {
     grid-template-columns: 35% 65%;
     grid-template-areas: "texto nada";
 
-    height: auto;
+    height: 100vh;
 }
 
 .photo-align-right .text, .photo-align-right .text, .photo-align-center .text  {
