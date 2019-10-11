@@ -137,6 +137,11 @@ header {
     color: rgba(221, 75, 3, 1);
     
 }
+.button-header>a, .button-header>a:active, .button-header>a:visited, .button-header>a:hover{
+    text-decoration: inherit;
+    color: inherit;
+}
+
 
 footer {
     grid-area: footer;
@@ -155,7 +160,7 @@ footer {
     grid-template-columns: 65% 35%;
     grid-template-areas: "nada texto";
 
-    height: 50vh;
+    height: 50%;
 }
 .photo-align-left {
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("https://picsum.photos/1280/720")  no-repeat;
@@ -197,6 +202,31 @@ footer {
     font-size: 2rem;
     flex-grow: 1;
     color: white;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 650px){
+
+    header{
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "info"
+            "buttons";
+    }
+
+    .fondo {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 2;
+    }
+
+    .botones-header{
+        justify-content: center;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
 }
 
 .text > .subtitle.vivienda {
@@ -227,7 +257,7 @@ footer {
 
     .card-container {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 0.3rem, 0.3rem;
         grid-area: cards;
 
