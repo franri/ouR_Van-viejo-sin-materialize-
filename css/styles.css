@@ -147,7 +147,7 @@ footer {
     margin-top: 4rem;
 }
 
-.main-photo {
+.photo-align-right {
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("https://picsum.photos/1280/720")  no-repeat;
     background-size: cover;
     background-position: center center;
@@ -157,8 +157,24 @@ footer {
 
     height: 50vh;
 }
+.photo-align-left {
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("https://picsum.photos/1280/720")  no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-areas: "texto nada";
 
-.main-photo .text {
+    height: auto;
+}
+
+.photo-align-right .text, .photo-align-right .text  {
+    grid-area: texto;
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-align-left .text {
     grid-area: texto;
     display: flex;
     flex-direction: column;
@@ -182,6 +198,22 @@ footer {
     flex-grow: 1;
     color: white;
 }
+
+.text > .subtitle.vivienda {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    flex-grow: 1;
+    color: black;
+    margin: 45px;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 60px;
+}
+
 
 @media all and (min-width: 401px) {
     .layout {
