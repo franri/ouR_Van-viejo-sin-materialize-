@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+#mapdiv {
+    width: 80vw;
+    height: 70vh;
+    border: darkslategrey 4px solid;
+}
+
+.title, .subtitle {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: darkslategrey;
+    font-weight: bold;
+}
+.title {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+.subtitle {
+    margin-bottom: 1rem;    
+    font-size: 1.5rem;
+}
+
+
+header {
+    grid-area: header;
+    width: 100%;
+    z-index: 1000;
+    border-bottom-left-radius: 20px;
+    display: grid;
+    grid-template-columns: 140px auto 40%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "info name buttons"
+        "info .... .......";
+    
+}
+
+.logo-container {
+    grid-area: info;
+    display: flex;
+    justify-content: center;
+}
+.logo-container>img {
+    float: left;
+    border-radius: 100%;
+}
+.fondo {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    border-bottom-left-radius: 30px;
+}
+
+
+.brand-name{
+    grid-area: name;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.botones-header {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;    
+    grid-area: buttons;
+}
+.botones-header:last-child{
+    margin-right: 10px;
+}
+.button-header{
+    text-align: center;
+    margin-left: 10px;
+}
+.button-header:hover{
+    transition: color .2s ease-out;
+    color: rgba(221, 75, 3, 1);
+    
+}
+.button-header>a, .button-header>a:active, .button-header>a:visited, .button-header>a:hover{
+    text-decoration: inherit;
+    color: inherit;
+}
