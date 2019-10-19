@@ -173,6 +173,12 @@ header {
   .zero-down-arrow:active:after {
     opacity: 0;
   }
+
+  .page-footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+  }
   
   @keyframes shine{
     to {
