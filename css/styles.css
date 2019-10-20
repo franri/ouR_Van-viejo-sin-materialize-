@@ -176,7 +176,7 @@ header {
   }
 
   .page-footer {
-      position: absolute;
+      
       bottom: 0;
       width: 100%;
   }
@@ -194,7 +194,8 @@ header {
 
 footer {
     grid-area: footer;
-    background: lightskyblue;
+    bottom: 0;
+    width: 100%;
 }
 
 .content {
@@ -341,7 +342,6 @@ footer {
         transform: translateY(-1em);
         box-shadow: 5px 5px 5px sandybrown, 5px -5px 5px sandybrown;
     }
-
 }
 
 @media all and (max-width: 400px) {
